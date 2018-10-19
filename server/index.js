@@ -27,20 +27,18 @@ massive(CONNECTION_STRING).then((db) => {
 
 app.get('/api/getProducts', storeController.getProducts);
 
-// app.get('/api/getOrder',);
+app.put('/api/getOrders', storeController.getOrders);
 
-// app.get('/api/getOrders',);
+app.post('/api/placeOrder', storeController.placeOrder);
 
-// app.put('/api/updateOrder',);
+app.post('/api/deleteOrder', storeController.deleteOrder);
 
-// app.post('/api/placeOrder',);
+app.put('/api/getCart', storeController.getCart);
 
-// app.get('/api/getCart',);
+app.put('/api/updateCart', storeController.updateCart);
 
-// app.put('/api/updateCart',);
+app.post('/api/newCart', storeController.newCart);
 
-// app.post('/api/newCart',);
-
-// app.put('/api/deleteCart',);
+app.put('/api/deleteCart', storeController.deleteCart);
 
 app.listen(SERVER_PORT, () => console.log(`Hailing frequencies open on port ${SERVER_PORT}...`));

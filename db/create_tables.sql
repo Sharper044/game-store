@@ -18,12 +18,14 @@ CREATE TABLE gs_customers (
 CREATE TABLE gs_orders (
   id SERIAL PRIMARY KEY,
   cart_id INTEGER,
-  order_time TIMESTAMP WITH TIME ZONE
+  order_time TIMESTAMP WITH TIME ZONE,
+  customer_id INTEGER
 );
 
 CREATE TABLE gs_carts (
   id SERIAL PRIMARY KEY,
-  customer_id INTEGER
+  customer_id INTEGER,
+  active BOOLEAN
 );
 
 CREATE TABLE gs_cart_items (
