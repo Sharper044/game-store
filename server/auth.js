@@ -6,7 +6,7 @@ module.exports={
     const db = app.get('db');
     const { sub, email } = profile._json;
 
-    db.find_customer([sub])
+    db.find_user([sub])
       .then(res => {
         if (res.length) {
           done(null, res[0].user_id);
