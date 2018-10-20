@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 dotenv.config({ path: '.env.local' });
 
-module.exports={
+module.exports = {
   authStrategyFunction: (accessToken, refreshToken, extraParams, profile, done) => {
     const db = app.get('db');
     const { sub, email } = profile._json;
@@ -12,7 +12,7 @@ module.exports={
           done(null, res[0].user_id);
         } else {
           db.register([sub, email])
-            .then(registeredUser => {
+            .then((registeredUser) => {
               done(null, registeredUser[0].user_id);
             });
         }
@@ -24,5 +24,5 @@ module.exports={
     } else {
       res.status(200).send(req.user);
     }
-  }
+  },
 }

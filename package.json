@@ -4,6 +4,7 @@
   "private": true,
   "main": "./server/index",
   "dependencies": {
+    "@material-ui/core": "^3.2.2",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "dotenv": "^6.1.0",
@@ -16,31 +17,21 @@
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.0.5",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.5",
-    "redux-promise-middleware": "^5.1.1",
-    "typesafe-actions": "^2.0.4"
+    "redux-promise-middleware": "^5.1.1"
   },
   "scripts": {
-    "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
-    "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject",
-    "nodeStart": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "@types/axios": "^0.14.0",
-    "@types/jest": "^23.3.5",
-    "@types/react": "^16.4.18",
-    "@types/react-dom": "^16.0.9",
-    "@types/react-redux": "^6.0.9",
-    "@types/react-router-dom": "^4.3.1",
-    "@types/redux": "^3.6.0",
-    "@types/redux-devtools-extension": "^2.13.2",
-    "@types/redux-promise-middleware": "0.0.11",
-    "react-scripts-ts": "3.1.0",
-    "tslint-config-airbnb": "^5.11.0",
-    "tslint-react": "^3.6.0",
-    "typescript": "^3.1.3"
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

@@ -1,49 +1,48 @@
 import * as axios from 'axios';
-import { action } from 'typesafe-actions';
-import { ActionTypes, IState } from './types';
+import { ActionTypes } from './types';
 
 
 export const getUserData = () => {
   const userInfo = axios.default.get('/api/userData').then(res => res.data);
-  action(ActionTypes.GET_USER_DATA, userInfo);
+  return { type: ActionTypes.GET_USER_DATA, payload: userInfo };
 };
 
 export const getProducts = () => {
   const products = axios.default.get('/api/getProducts').then(res => res.data);
-  action(ActionTypes.GET_PRODUCTS, products);
+  return { type: ActionTypes.GET_PRODUCTS, payload: products };
 };
 
-export const getOrders = (customer_id: number) => {
+export const getOrders = (customer_id) => {
   const orders = axios.default.put('/api/getOrders', { customer_id }).then(res => res.data);
-  action(ActionTypes.GET_ORDERS, orders);
+  return { type: ActionTypes.GET_ORDERS, payload: orders };
 };
 
-export const placeOrder = (cart_id: number, order_time: string, customer_id: number) => {
+export const placeOrder = (cart_id, order_time, customer_id) => {
   const orders = axios.default.post('/api/placeOrder', { cart_id, order_time, customer_id }).then(res => res.data);
-  action(ActionTypes.PLACE_ORDER, orders);
+  return { type: ActionTypes.PLACE_ORDER, payload: orders };
 };
 
-export const deleteOrder = (order_id: number, customer_id: number) => {
+export const deleteOrder = (order_id, customer_id) => {
   const orders = axios.default.post('/api/deleteOrder', { order_id, customer_id }).then(res => res.data);
-  action(ActionTypes.DELETE_ORDER, orders);
+  return { type: ActionTypes.DELETE_ORDER, payload: orders };
 };
 
-export const getCart = (customer_id: number) => {
+export const getCart = (customer_id) => {
   const cart = axios.default.put('/api/getCart', { customer_id }).then(res => res.data);
-  action(ActionTypes.GET_CART, cart);
+  return { type: ActionTypes.GET_CART, payload: cart };
 };
 
-export const updateCart = (cart_id: number, customer_id: number, items: IState['cart']['items']) => {
+export const updateCart = (cart_id, customer_id, items) => {
   const cart = axios.default.put('/api/updateCart', { cart_id, customer_id, items }).then(res => res.data);
-  action(ActionTypes.UPDATE_CART, cart);
+  return { type: ActionTypes.UPDATE_CART, payload: cart };
 };
 
-export const newCart = (customer_id: number) => {
+export const newCart = (customer_id) => {
   const cart = axios.default.post('/api/newCart', { customer_id }).then(res => res.data);
-  action(ActionTypes.NEW_CART, cart);
+  return { type: ActionTypes.NEW_CART, payload: cart };
 };
 
-export const deleteCart = (cart_id: number, customer_id: number) => {
+export const deleteCart = (cart_id, customer_id) => {
   const cart = axios.default.put('/api/deleteCart', { cart_id, customer_id }).then(res => res.data);
-  action(ActionTypes.DELETE_CART, cart);
+  return { type: ActionTypes.DELETE_CART, payload: cart };
 };

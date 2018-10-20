@@ -1,14 +1,13 @@
-import { Reducer } from 'redux';
-import { ActionTypes, IState } from './types';
+import { ActionTypes } from './types';
 
-const initialState: IState = {
+const initialState = {
   products: [],
   user: null,
   orders: [],
   cart: null,
 };
 
-const reducer: Reducer<IState> = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.GET_USER_DATA:
       return { ...state, user: action.payload };

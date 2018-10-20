@@ -1,15 +1,17 @@
-import * as React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Cart from './pages/Cart';
 import Landing from './pages/Landing';
+import NavBar from './pages/NavBar';
 import Products from './pages/Products';
 import ProfileAndOrders from './pages/ProfileAndOrders';
 
 class App extends React.Component {
-  public render() {
+  render() {
     return (
       <BrowserRouter>
         <div className="App">
+          <NavBar/>
           <Switch>
             <Route component={Landing} exact path="/"/>
             <Route component={Cart} path="/cart"/>
