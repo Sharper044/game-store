@@ -58,9 +58,9 @@ app.get('/api/getProducts', storeController.getProducts);
 
 app.put('/api/getOrders', storeController.getOrders);
 
-app.post('/api/placeOrder', storeController.placeOrder);
+app.post('/api/placeOrder', storeController.placeOrder, storeController.getOrders);
 
-app.post('/api/deleteOrder', storeController.deleteOrder);
+app.post('/api/deleteOrder', storeController.deleteOrder, storeController.getOrders);
 
 app.put('/api/getCart', storeController.getCart);
 
@@ -68,6 +68,6 @@ app.put('/api/updateCart', storeController.updateCart, storeController.getCart);
 
 app.post('/api/newCart', storeController.newCart);
 
-app.put('/api/deleteCart', storeController.deleteCart);
+app.put('/api/deleteCart', storeController.deleteCart, storeController.newCart);
 
 app.listen(SERVER_PORT, () => console.log(`Hailing frequencies open on port ${SERVER_PORT}...`));

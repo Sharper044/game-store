@@ -22,23 +22,21 @@ module.exports = {
     res.status(200).send(orders);
   },
 
-  placeOrder: async (req, res) => {
+  placeOrder: async (req, res, next) => {
     const db = req.app.get('db');
     const {cart_id, order_time, customer_id} = req.body;
-    const checkCustomerId = await db.check_order([cart_id]);
+    const checkCustomerId = await db.check_cart([cart_id]);
 
     if (checkCustomerId[0].customer_id !== customer_id) {
       res.status(403).send('You are not permitted to place an order for anyone other than yourself.');
     }
 
     await db.place_order([cart_id, order_time, customer_id]);
-    db.get_orders([customer_id])
-      .then(orders => {
-        res.status(200).send(orders);
-      }).catch(console.log);
+
+    next();
   },
 
-  deleteOrder: async (req, res) => {
+  deleteOrder: async (req, res, next) => {
     const db = req.app.get('db');
     const {order_id, customer_id} = req.body;
     const checkCustomerId = await db.check_order([order_id]);
@@ -48,10 +46,8 @@ module.exports = {
     }
 
     await db.delete_order([order_id])
-    db.get_orders([customer_id])
-      .then(orders => {
-        res.status(200).send(orders);
-      }).catch(console.log);
+    
+    next();
   },
 
   getCart: async (req, res) => {
@@ -80,7 +76,7 @@ module.exports = {
         await db.update_cart([cart_id, item.product_id, item.quantity]);
       }
     });
-    
+
     next();
   },
 
@@ -98,7 +94,7 @@ module.exports = {
       }).catch(console.log);
   },
 
-  deleteCart: async (req, res) => {
+  deleteCart: async (req, res, next) => {
     const db = req.app.get('db');
     const {cart_id, customer_id} = req.body;
     const checkCustomerId = await db.check_cart([cart_id]);
@@ -107,9 +103,8 @@ module.exports = {
       res.status(403).send('You are not permitted to delete any cart except your own.');
     }
 
-    db.delete_cart([req.body.cart_id])
-      .then(() => {
-        res.status(200).send({});
-      }).catch(console.log);
+    await db.delete_cart([req.body.cart_id])
+    
+    next();
   },
 };

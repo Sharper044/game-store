@@ -1,2 +1,2 @@
 DELETE FROM gs_cart_items
-WHERE cart_id = $1 AND quantity = $2;
+WHERE cart_id = $1 AND product_id = $2;
