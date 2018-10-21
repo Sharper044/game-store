@@ -1,6 +1,6 @@
-insert into gs_customers (user_id, email)
-values ($1, $2);
+INSERT INTO gs_customers (username, password)
+VALUES ($1, $2);
 
-select *
-from rew_users
-where user_id = $1;
+SELECT *
+FROM rew_users
+WHERE username = $1 AND password = $2;

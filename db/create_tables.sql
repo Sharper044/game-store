@@ -11,8 +11,8 @@ CREATE TABLE gs_products (
 
 CREATE TABLE gs_customers (
   id SERIAL PRIMARY KEY,
-  user_id TEXT,
-  email TEXT
+  username TEXT,
+  password TEXT
 );
 
 CREATE TABLE gs_orders (

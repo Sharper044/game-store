@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Cart from './pages/Cart';
+// import Cart from './pages/Cart';
 import Landing from './pages/Landing';
 import NavBar from './pages/NavBar';
-import Products from './pages/Products';
-import ProfileAndOrders from './pages/ProfileAndOrders';
+// import Products from './pages/Products';
+// import ProfileAndOrders from './pages/ProfileAndOrders';
 
 class App extends React.Component {
   render() {
@@ -14,9 +14,9 @@ class App extends React.Component {
           <NavBar/>
           <Switch>
             <Route component={Landing} exact path="/"/>
-            <Route component={Cart} path="/cart"/>
+            {/* <Route component={Cart} path="/cart"/>
             <Route component={Products} path="/products"/>
-            <Route component={ProfileAndOrders} path="/profile"/>
+            <Route component={ProfileAndOrders} path="/profile"/> */}
           </Switch>
         </div>
       </BrowserRouter>
