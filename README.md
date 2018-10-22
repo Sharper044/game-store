@@ -17,7 +17,7 @@ I was given the following challenge:
 * The site backend should treat the products and customer profile information as though it were pulled from a database. If you want to include a simple database that is fine, however, calling a JSON file is sufficient.
 * See [https://printandmail.byu.edu/laser](https://printandmail.byu.edu/laser) for an example of what a list of products and additional details when selecting a product might look like. Please note: you do not have to build anything as complex as that site. Products do not need to require any additional customization beyond selecting quantity.
 * The shopping cart should allow each customer to add or remove items and change item quantities. Shopping carts should be unique to each customer (if two people are visiting the site, they will each have their own shopping cart).
-* The customer profile page should include information about the customer (such as name, email). That information should be editable. Again, it is not necessary to include a database; reading from and writing to JSON files is sufficient.
+* The customer profile page should include information about the customer (such as name, email). That information should be editable. Again, it is not necessary to include a database; reading from and writing to JSON files is sufficient."
 
 I had hoped to finish the project in a week, but I did not have enough time available that week to do so.
 
@@ -32,10 +32,6 @@ These instructions will get you a copy of the project up and running on your loc
 3) contact me for a copy of the .env.local file, and place it in the root of the project.
 4) run 'nodemon' in the terminal to start a local copy of the server.
 5) run 'npm start' or 'yarn start' in the terminal to begin running a local copy of the front end.
-
-## Deployment
-
-I currently have this hosted on digital ocean if you have any improvements on this please contact me.
 
 ## Built With
 
@@ -69,4 +65,4 @@ At some point, I plan on replacing the Javascript on the front and back ends wit
 
 ## Acknowledgments
 
-* I want to thank my wife, Summer 'The Amazing' Harper, for being so supportive. After coming home from two jobs I normally take care of the children and provide her with some relief, but all this week she has been essentially running the house on her own, and giving me all the time I could get in the evenings to work on this. To my Amazing wife... I salute you!
+* I want to thank my wife, Summer 'The Amazing' Harper, for being so supportive. After coming home from two jobs I normally take care of the children and provide her with some relief; but all this week she has been essentially running the house on her own, and giving me all the time I could get in the evenings to work on this. To my Amazing wife... I salute you and I love you!
