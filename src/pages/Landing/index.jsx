@@ -83,8 +83,8 @@ class Landing extends React.Component {
         <div className={classes.root}>
           <GridList cellHeight={160} className={classes.gridList} cols={3}>
             {products.map((tile, i) => (
-              <GridListTile key={tile.img} cols={(i === 0 || i === 7) ? 2 : 1}>
-                <img src={tile.img} alt={tile.title} />
+              <GridListTile key={tile.id} cols={(i === 0 || i === 6) ? 2 : 1}>
+                <img src={tile.photo_url} alt={tile.title} />
               </GridListTile>
             ))}
           </GridList>
