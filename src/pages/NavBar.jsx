@@ -1,3 +1,4 @@
+// Based off of the app bar in Material-UI's Demos. TODO: Customize the component. TODO: Get login/logout button to work. TODO: Add links to all pages.
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';

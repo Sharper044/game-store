@@ -1,9 +1,9 @@
+// Main landing page. Currently rendering. These components are based off of the demos at Material-UI's documentation page. TODO: Customize these components and finish landing page. TODO: Add custom theme. TODO: Add a modal to show product details and allow cart quantities to be updated.
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';

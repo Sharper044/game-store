@@ -1,3 +1,5 @@
+-- Used to create a user in the database --
+
 INSERT INTO gs_customers (username, password)
 VALUES ($1, $2);
 

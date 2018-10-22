@@ -1,3 +1,5 @@
+// This is a list of all the possible actions for the redux state. It is also how the communication from front to back end will be accomplished. More may be added depending on the needs of the frontend as it is built.
+
 import * as axios from 'axios';
 import { ActionTypes } from './types';
 
@@ -45,3 +47,5 @@ export const deleteCart = (cart_id, customer_id) => {
   const cart = axios.put(process.env.REACT_APP_SERVER_URL + '/api/deleteCart', { cart_id, customer_id }).then(res => res.data);
   return { type: ActionTypes.DELETE_CART, payload: cart };
 };
+
+// TODO: Add in all actions for mergeCartRegister, mergeCartLogin, login, register, logout, and checkForSession.

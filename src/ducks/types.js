@@ -1,3 +1,5 @@
+// Used to provide consistent action types. When the conversion to TypeScript takes place these interfaces will be used again.
+
 // interface IProduct {
 //   id: number;
 //   name: string;
@@ -37,6 +39,7 @@
 //   };
 // }
 
+// TODO: Add the remaining action types (see actions.js).
 export const ActionTypes = {
   GET_USER_DATA: 'GET_USER_DATA',
   GET_PRODUCTS: 'GET_PRODUCTS',

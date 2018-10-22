@@ -1,5 +1,6 @@
 import { ActionTypes } from './types';
 
+// Initial setup on the redux state
 const initialState = {
   products: [],
   user: null,
@@ -7,6 +8,7 @@ const initialState = {
   cart: null,
 };
 
+// The reducer function for redux. (see documentation) TODO: add in the cases for the other actions that have yet to be written (see actions.js).
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.GET_USER_DATA + '_FULFILLED':
